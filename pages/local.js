@@ -1,11 +1,13 @@
-import useSWR from 'swr';
+import React, {Component} from 'react';
+export default class Local extends Component {
+    static async getInitialProps() {
+        const res = await fetch('https://xkcd.com/4/info.0.json');
+        const data = await res.json();
 
-const fetcher = (...args) => fetch(...args).then(res => res.json())
+        return { data }
+    }
 
-export default function Local() {
-    const { data, error } = useSWR('//xkcd.com/4/info.0.json', fetcher)
-    if (error) return <div>failed to load</div>
-    if (!data) return <div>loading...</div>
-    // render data
-    return <div>{data}</div>
+    render() {
+        return (<div>TESTING</div>);
+    }
 }
