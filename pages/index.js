@@ -15,7 +15,7 @@ export default function Home({ allStaticPages = [] }) {
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog (Static Site Generation)</h2>
         <ul className={utilStyles.list}>
-        <li className={utilStyles.listItem} key={99}><a href="/posts/0">Regular Link - Large Example</a></li>
+        <li className={utilStyles.listItem} key={99}><a href="/static-pages/0.html">Regular Link - Large Example</a></li>
           {allStaticPages.map(({ id, title, date }) => (
             <li className={utilStyles.listItem} key={id}>
               <Link href={`/posts/${id}`}>
