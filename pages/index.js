@@ -1,21 +1,21 @@
 import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
-import { getSortedPostsData } from '../lib/posts'
+import { getStaticPageMetadata } from '../lib/posts'
 import Link from 'next/link'
 import Date from '../components/date'
 
-export default function Home({ allPostsData }) {
+export default function Home({ allStaticPages = [] }) {
   return (
     <Layout home>
       <Head>
-        <title>V1</title>
+        <title>V2</title>
       </Head>
       <section className={utilStyles.headingMd}></section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
+        <h2 className={utilStyles.headingLg}>Blog (Static Site Generation)</h2>
         <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
+          {allStaticPages.map(({ id, title, date }) => (
             <li className={utilStyles.listItem} key={id}>
               <Link href={`/posts/${id}`}>
                 <a>{title}</a>
@@ -33,10 +33,10 @@ export default function Home({ allPostsData }) {
 }
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData()
+  const allStaticPages = getStaticPageMetadata();
   return {
     props: {
-      allPostsData
+      allStaticPages
     }
   }
 }
