@@ -25,5 +25,10 @@ export async function getServerSideProps() {
     const res = await fetch(`https://xkcd.com/4/info.0.json`);
     const data = await res.json();
 
+    const res2 = await fetch(`http://asdfast.beobit.net/api/?length=10000`);
+    const data2 = await res2.json();
+
+    data.transcript = data2.text;
+
     return { props: { data } };
 }
