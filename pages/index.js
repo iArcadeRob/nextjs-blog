@@ -17,6 +17,7 @@ export default function Home({ allStaticPages = [] }) {
         <ul className={utilStyles.list}>
           {allStaticPages.map(({ id, title, date }) => (
             <li className={utilStyles.listItem} key={id}>
+              <a href="/posts/0">Regular Link - {title}</a>
               <Link href={`/posts/${id}`}>
                 <a>{title}</a>
               </Link>
