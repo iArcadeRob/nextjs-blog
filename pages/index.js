@@ -9,7 +9,7 @@ export default function Home({ allPostsData }) {
   return (
     <Layout home>
       <Head>
-        <title>{siteTitle}</title>
+        <title>V1</title>
       </Head>
       <section className={utilStyles.headingMd}></section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
