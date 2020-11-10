@@ -57,22 +57,22 @@ export default function Home({ allStaticPages = [] }) {
         <h2 className={utilStyles.headingLg}>(Client Side)</h2>
         <ul>
           <li>
-          <Link href="/local">
+          <Link href="/zero">
             <a>Large</a>
           </Link>
           </li>
           <li>
-          <Link href="/posts/a">
+          <Link href="/one">
             <a>Barrel</a>
           </Link>
           </li>
           <li>
-          <Link href="/posts/b">
+          <Link href="/two">
             <a>Trees</a>
           </Link>
           </li>
           <li>
-          <Link href="/posts/c">
+          <Link href="/three">
             <a>Island</a>
           </Link>
           </li>
