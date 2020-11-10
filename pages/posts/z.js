@@ -29,6 +29,7 @@ export async function getServerSideProps() {
     const data2 = await res2.json();
 
     data.transcript = data2.text;
+    data.img = '/images/island.jpg';
 
     return { props: { data } };
 }

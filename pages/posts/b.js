@@ -24,6 +24,7 @@ export async function getServerSideProps() {
     //Fetch data from external API
     const res = await fetch(`https://xkcd.com/2/info.0.json`);
     const data = await res.json();
+    data.img = '/images/tree.jpg';
 
     return { props: { data } };
 }
