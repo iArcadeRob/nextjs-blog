@@ -1,7 +1,7 @@
 import Layout from '../../../components/layout'
 import Head from 'next/head'
 import IDate from '../../../components/idate'
-import utilStyles from '../../styles/utils.module.css'
+import utilStyles from '../../../styles/utils.module.css'
 
 export default function Page({ data }) {
     return <Layout>
