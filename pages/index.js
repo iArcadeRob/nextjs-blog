@@ -7,7 +7,20 @@ export default function Home() {
     return (
         <Layout>
             <Head>
-                <title>Home</title>
+            <meta charset="utf-8"/>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+            <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+            <meta name="description" content="Next JS Prototype"/>
+            <meta name="keywords" content="Next"/>
+            <title>Next JS Prototype</title>
+
+            <meta name="theme-color" content="red"/>
+            <meta name="mobile-web-app-capable" content="yes"/>
+
+            <meta name="apple-mobile-web-app-title" content="Next JS Prototype"/>
+            <meta name="apple-mobile-web-app-capable" content="yes"/>
+            <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+
             </Head>
             <section className={utilStyles.headingMd}></section>
             <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}></section>
