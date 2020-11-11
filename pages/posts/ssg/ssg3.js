@@ -1,8 +1,8 @@
-import Layout from '../../components/layout'
-import { getAllPostIds, getPostData } from '../../lib/posts'
+import Layout from '../../../components/layout'
+import { getAllPostIds, getPostData } from '../../../lib/posts'
 import Head from 'next/head'
-import IDate from '../../components/idate'
-import utilStyles from '../../styles/utils.module.css'
+import IDate from '../../../components/idate'
+import utilStyles from '../../../styles/utils.module.css'
 
 export default function Post({postData}) {
     return <Layout>
@@ -20,16 +20,8 @@ export default function Post({postData}) {
     </Layout>
 }
 
-export async function getStaticPaths() {
-    const paths = getAllPostIds();
-    return {
-        paths,
-        fallback: false
-    }
-}
-
-export async function getStaticProps({ params }) {
-    const postData = await getPostData(params.id)
+export async function getStaticProps() {
+    const postData = await getPostData('3')
     return {
         props: {
             postData

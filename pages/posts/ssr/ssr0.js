@@ -1,12 +1,12 @@
-import Layout from '../../components/layout'
+import Layout from '../../../components/layout'
 import Head from 'next/head'
-import IDate from '../../components/idate'
+import IDate from '../../../components/idate'
 import utilStyles from '../../styles/utils.module.css'
 
 export default function Page({ data }) {
     return <Layout>
         <Head>
-            <title>{1}</title>
+            <title>{4}</title>
         </Head>
         <article>
             <h1 className={utilStyles.headingXl}>{data.title}</h1>
@@ -22,28 +22,14 @@ export default function Page({ data }) {
 // This gets called on every request
 export async function getServerSideProps() {
     //Fetch data from external API
-    const res = await fetch(`https://xkcd.com/1/info.0.json`);
+    const res = await fetch(`https://xkcd.com/4/info.0.json`);
     const data = await res.json();
-    data.img = '/images/barrel.jpg';
+
+    const res2 = await fetch(`http://asdfast.beobit.net/api/?length=10000`);
+    const data2 = await res2.json();
+
+    data.transcript = data2.text;
+    data.img = '/images/island.jpg';
 
     return { props: { data } };
 }
-
-/*
-{
-  month: '1',
-  num: 1,
-  link: '',
-  year: '2006',
-  news: '',
-  safe_title: 'Barrel - Part 1',
-  transcript: '[[A boy sits in a barrel which is floating in an ocean.]]\n' +
-    "Boy: I wonder where I'll float next?\n" +
-    '[[The barrel drifts into the distance. Nothing else can be seen.]]\n' +
-    "{{Alt: Don't we all.}}",
-  alt: "Don't we all.",
-  img: 'https://imgs.xkcd.com/comics/barrel_cropped_(1).jpg',
-  title: 'Barrel - Part 1',
-  day: '1'
-}
-*/
